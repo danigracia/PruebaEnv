@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace ExampleEnvironment
 {
@@ -7,10 +6,7 @@ namespace ExampleEnvironment
     {
         public static void Main()
         {
-            Environment.CurrentDirectory = Environment.GetEnvironmentVariable("TEST");
-            DirectoryInfo info = new DirectoryInfo(".");
-
-            Console.WriteLine("Directory Info:   " + info.FullName);
+            Console.WriteLine("TESTVAR = " + Environment.GetEnvironmentVariable("TESTVAR", EnvironmentVariableTarget.User));
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
